@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borang Takaful</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6; /* Soft background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between inputs */
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db; /* Neutral border color */
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4CAF50; /* Green focus color */
+            outline: none;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4CAF50; /* Primary button color */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2e6a31; /* Darker green on hover */
+        }
+
+        @media (max-width: 500px) {
+            form {
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            input {
+                padding: 10px;
+            }
+
+            button {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Accessible form with ARIA roles and labels -->
+    <form onsubmit="javascript:alert('Maklumat anda telah dihantar. =)')" aria-labelledby="form-title">
+        <h1 id="form-title" style="text-align: center; font-size: 20px; color: #4CAF50;">Borang Permohonan Hibah Takaful</h1>
+        
+        <!-- Nama Peserta -->
+        <div>
+            <label for="nama_peserta">Nama Peserta</label>
+            <input type="text" name="nama_peserta" id="nama_peserta" 
+                   placeholder="Contoh: Ali Bin Ahmad" 
+                   required aria-required="true">
+        </div>
+        
+        <!-- Tarikh Lahir -->
+        <div>
+            <label for="DOB_peserta">Tarikh Lahir Peserta</label>
+            <input type="date" name="DOB_peserta" id="DOB_peserta" 
+                   required aria-required="true">
+        </div>
+        
+        <!-- IC Peserta -->
+        <div>
+            <label for="IC_peserta">IC Peserta</label>
+            <input type="text" name="IC_peserta" id="IC_peserta" 
+                   placeholder="Contoh: 900101-01-1234" 
+                   pattern="\d{6}-\d{2}-\d{4}" 
+                   title="Masukkan dalam format 900101-01-1234" 
+                   required aria-required="true">
+        </div>
+        
+        <!-- Sejarah Kesihatan -->
+        <div>
+            <label for="kesihatan_peserta">Sejarah Kesihatan Peserta</label>
+            <input type="text" name="kesihatan_peserta" id="kesihatan_peserta" 
+                   placeholder="Contoh: Tiada masalah kesihatan" 
+                   required aria-required="true">
+        </div>
+        
+        <!-- Nama Penerima Hibah -->
+        <div>
+            <label for="nama_hibah">Nama Penerima Hibah</label>
+            <input type="text" name="nama_hibah" id="nama_hibah" 
+                   placeholder="Contoh: Siti Binti Ali" 
+                   required aria-required="true">
+        </div>
+        
+        <!-- Submit Button -->
+        <button type="submit">HANTAR</button>
+    </form>
+</body>
+</html>
